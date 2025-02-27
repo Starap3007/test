@@ -24,6 +24,9 @@ jobs:
     - name: Setup Gradle Wrapper
       uses: gradle/actions/setup-gradle@v4  # Use latest Gradle setup action (v2.0.0)
 
+    - name: Ensure gradlew is executable
+      run: chmod +x ./gradlew 
+
     # Run the Gradle build using the Gradle Wrapper (gradlew)
     - name: Build with Gradle Wrapper
       run: ./gradlew build  # Use the wrapper instead of 'gradle'
