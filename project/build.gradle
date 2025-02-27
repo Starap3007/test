@@ -3,13 +3,10 @@ plugins {
     id 'application' // Apply the application plugin
 }
 
-mainClassName = 'com.example.App' // Specify the main class to run
-
-
 group = 'com.example'
 version = '1.0-SNAPSHOT'
 
-sourceCompatibility = '1.8' // Set Java version
+sourceCompatibility = '17' // Set Java version to match GitHub Actions (JDK 17)
 
 repositories {
     mavenCentral() // Use Maven Central for dependencies
@@ -17,16 +14,20 @@ repositories {
 
 dependencies {
     // Example: JUnit dependency for testing
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2' // Updated to a more recent version
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2' // Updated to a more recent version
 }
 
 test {
     useJUnitPlatform() // Use JUnit Platform for testing
 }
 
+application {
+    // Define the main class for the application plugin
+    mainClass = 'com.example.App' // Specify the main class to run
+}
+
 jar {
     archiveBaseName = 'gradle-example' // Set the base name of the jar file
     archiveVersion = version // Set the version of the jar file
 }
-
