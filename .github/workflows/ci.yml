@@ -22,7 +22,7 @@ jobs:
 
     # Set up Gradle wrapper (ensure gradlew script is available)
     - name: Setup Gradle Wrapper
-      uses: gradle/actions/setup-gradle@v2  # Use latest Gradle setup action (v2.0.0)
+      uses: gradle/actions/setup-gradle@v4  # Use latest Gradle setup action (v2.0.0)
 
     # Run the Gradle build using the Gradle Wrapper (gradlew)
     - name: Build with Gradle Wrapper
